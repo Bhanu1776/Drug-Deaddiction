@@ -4,6 +4,7 @@ import Login from './pages/Login/Login';
 import Error from './components/Error';
 import Signup from '@/pages/Signup/signup';
 import Doctors from '@/pages/Doctor/Doctor';
+import Details from './pages/Doctor/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path: '/doctors',
     element: <Doctors />,
   },
+  {
+    path: '/docdetails/:id',
+    element: <Details />,
+  }
 ]);
 
 const Routing = () => <RouterProvider router={router} />;
