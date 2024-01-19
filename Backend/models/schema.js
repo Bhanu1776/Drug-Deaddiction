@@ -4,12 +4,8 @@ const doctorschema = new mongoose.Schema({
     username:String,
     email:String,
     password:String,
-    review:String,
-    appoinment:[
-        {
-            message:String
-        }
-    ]
+    address:String,
+    contact:Number
 })
 
 const DoctorSchema = mongoose.model('DoctorSchema',doctorschema)
