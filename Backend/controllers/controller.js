@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken')
 const Signup = async(req,res)=>{
     console.log(req.body)
     try{
-        const {username, email, password} = req.body
+        const {username, email, password , address , contact} = req.body
 
         //check for doctor
         const doctor = await Doc.findOne({email})
@@ -20,7 +20,9 @@ const Signup = async(req,res)=>{
         const Doctor = await Doc.create({
             username:username,
             email:email,
-            password:hashpassword
+            password:hashpassword,
+            address:address,
+            contact:contact
         })
 
         const createdoc = await Doctor.save()
@@ -67,4 +69,26 @@ const Login = async(req,res)=>{
     }
 }
 
-module.exports = {Signup,Login}
+const GetDoctor = async(req,res)=>{
+    try{
+        const doctor = await Doc.find()
+        res.send(doctor)
+        console.log(doctor)
+        res.json(doctor)
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
+const GetById = async(req,res)=>{
+    try{
+        const id = req.params['id']
+        const docbyid = await Doc.findById(id)
+        console.log(docbyid)
+    }catch(err){
+        console.log(err)
+    }
+}
+
+module.exports = {Signup,Login,GetDoctor,GetById}
