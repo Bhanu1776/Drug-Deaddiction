@@ -53,7 +53,7 @@ const Signup = () => {
                 dispatch(requestFail(data));
             }
 
-            navigate('/');
+            if(data.success) navigate('/');
         } catch (error) {
             console.log(error);
         }
