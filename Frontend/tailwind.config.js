@@ -12,7 +12,10 @@ export default {
         '2xl': '1400px',
       },
     },
-    extend: {
+    extend: {fontFamily: {
+      subHeading: ['Roboto'," sans-serif"],
+      heading:['Merriweather', "serif"]
+     },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
