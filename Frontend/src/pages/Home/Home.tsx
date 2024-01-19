@@ -1,8 +1,8 @@
+import Navbar from "@/pages/Home/navbar"
 
 const Home = () => {
   return (
-    <div><h1>
-      Hello</h1></div>
+    <Navbar/>
   )
 }
 
