@@ -1,8 +1,6 @@
-const Doc = require('../model/schema')
+const Doc = require('../models/schema')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const dotenv = require('dotenv')
-dotenv.config()
 
 const Signup = async(req,res)=>{
     console.log(req.body)
@@ -60,7 +58,7 @@ const Login = async(req,res)=>{
             password:Doc.password
         }
 
-        const token = await jwt.sign(tokendata , process.env.SECRET_KEY)
+        const token = await jwt.sign(tokendata , 'gatewayapp')
 
         console.log("login successful",token)
 
