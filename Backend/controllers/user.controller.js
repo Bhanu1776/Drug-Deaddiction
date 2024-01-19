@@ -105,6 +105,60 @@ const userController = {
                 msg : error?.message
             })  
         }
+    },
+    getProfile : async(req, res) => {
+        try {
+            const {id} = req.params;
+            
+            const user = await userModel.findById(id);
+
+            if(!user){
+                return res.json({
+                    success : false,
+                    msg: "Kindly provide valid ID"
+                })
+            }
+
+            return res.json({
+                success : true,
+                user
+            })
+        } catch (error) {
+            return res.json({
+                sucess : false,
+                msg : error.message
+            })
+        }
+    },
+    updatePassword : async(req, res) => {
+        try {
+            const {oldpass, newpass, id} = req.body;
+
+            const user = await userModel.findById(id);
+
+            const match = await user.passwordMatch(oldpass);
+
+            if(!match){
+                return res.json({
+                    success : true,
+                    msg : "Old password is not valid"
+                })
+            }
+
+            this.password = newpass;
+
+            user.save();
+
+            return res.json({
+                success : true,
+                msg : "Password Updated"
+            })
+        } catch (error) {
+            return res.json({
+                sucess : false,
+                msg : error.message
+            }) 
+        }
     }
 }
 
