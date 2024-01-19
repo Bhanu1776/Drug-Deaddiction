@@ -1,6 +1,23 @@
 import { Button, Input } from '@/components/ui/index';
+// import { useQuery } from '@tanstack/react-query';
 
-const Login = () => (
+const Login = () =>
+{
+//   const { isLoading, error, data } = useQuery('repoData', () =>
+//   axios('https://api.github.com/repos/tannerlinsley/react-query', {
+
+//   }).then(res =>
+//     res.json()
+//   )
+// )
+
+// if (isLoading) return 'Loading...'
+
+// if (error) return 'An error has occurred: ' + error.message
+
+//   console.log(data);
+
+return(
   <section className="bg-gray-50">
     <div className="mx-auto flex flex-col items-center justify-center px-6 py-8 md:h-screen lg:py-0">
       <span className="mb-6 flex items-center text-2xl font-semibold text-gray-900">
@@ -54,6 +71,6 @@ const Login = () => (
       </div>
     </div>
   </section>
-);
+)};
 
 export default Login;

@@ -6,7 +6,7 @@ const userController = {
         try {
             const {username, email, password} = req.body;
             
-            const findUser = userModel.findOne({email});
+            const findUser = await userModel.findOne({email});
 
             if(!username || !email || !password){
                 return res.json({
@@ -104,6 +104,24 @@ const userController = {
                 success : false,
                 msg : error?.message
             })  
+        }
+    },
+    getProfile: async (req, res) => {
+        try {
+            const {id} = req.params;
+
+            const user = await userModel.findById(id);
+
+            return res.json({
+                success : true,
+                user
+            })
+            
+        } catch (error) {
+            return res.json({
+                success : false,
+                msg : error?.message
+            })
         }
     }
 }
