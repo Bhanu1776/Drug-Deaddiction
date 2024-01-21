@@ -1,5 +1,5 @@
 import React from 'react'
-import img3 from "/public/img3.jpg"
+import img3 from "/img3.jpg"
 const Activities = () => {
   return (
     <>

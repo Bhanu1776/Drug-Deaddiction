@@ -3,7 +3,7 @@ import { drugData } from '@/data/HomePageData'
 
 const Information = () => {
   return (
-    <>
+    <div className="flex flex-col items-center h-screen mx-48 mb-3">
 
     <div className='pt-2'>
     <div className='flex mt-8 mb-3 text-5xl font-bold text-center font-subHeading'>Important Information</div>
@@ -25,7 +25,7 @@ const Information = () => {
 </div>)
     })}
     
-    </>
+    </div>
   )
 }
 

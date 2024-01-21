@@ -110,7 +110,7 @@ const Signup = () => {
                 value={userData.username}
                 onChange={(e) => handleChange(e)}
                 placeholder="name@company.com"
-                className="bg-gray-50 text-black"
+                className="text-black bg-gray-50"
                 required
               />
                   </div>
@@ -123,7 +123,7 @@ const Signup = () => {
                 value={userData.email}
                 onChange={(e) => handleChange(e)}
                 placeholder="name@company.com"
-                className="bg-gray-50 text-black"
+                className="text-black bg-gray-50"
                 required
               />
                   </div>
@@ -136,7 +136,7 @@ const Signup = () => {
                 value={userData.password}
                 onChange={(e) => handleChange(e)}
                 // placeholder="••••••••"
-                className="bg-gray-50 text-black"
+                className="text-black bg-gray-50"
                 required
               />
                   </div>
@@ -147,7 +147,7 @@ const Signup = () => {
                 name="password"
                 id="password"
                 placeholder="••••••••"
-                className="bg-gray-50 text-black"
+                className="text-black bg-gray-50"
                 required
               />
                   </div>

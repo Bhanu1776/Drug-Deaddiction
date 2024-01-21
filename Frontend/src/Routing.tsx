@@ -5,6 +5,7 @@ import Error from './components/Error';
 import Signup from '@/pages/Signup/signup';
 import Doctors from '@/pages/Doctor/Doctor';
 import Details from './pages/Doctor/Details/Details';
+import Information from './pages/Information/components/Information';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/docdetails/:id',
     element: <Details />,
-  }
+  },
+  {
+  path:'/guidelines',
+element:<Information />},
 ]);
 
 const Routing = () => <RouterProvider router={router} />;
